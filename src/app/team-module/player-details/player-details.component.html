@@ -1,0 +1,652 @@
+<div class="d-flex justify-content-between align-items-center m-b-24">
+  <h2 class="m-0">Our team players</h2>
+  <div class="d-flex align-items-center">
+   
+    <button mat-icon-button routerLink="/team/addPlayerPerformance/{{player._id}}">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <h3 class="m-0">Add player performance</h3>
+
+  </div>
+</div>
+
+
+<div class="row d-flex align-items-center">
+  <div class="row col-4 mt-4">
+    <div style="transform: scale(.95);">
+      <mat-card class="cardWithShadow productcard overflow-hidden">
+        <a routerLink="/widgets/cards">
+          <img src="https://footyverse-backend.onrender.com/images/{{ player.avatar }}" alt="imgSrc" class="w-100" />
+        </a>
+        <mat-card-content class="p-b-24 p-t-12 position-relative d-flex align-items-center justify-content-between">
+
+          <div>
+            <mat-card-title class="mat-headline-2 f-s-16 m-b-4">
+              {{ player.firstName}} {{ player.firstName}}
+            </mat-card-title>
+
+            <div class="d-flex align-items-center">
+              <p class="mat-body-2 f-w-600" style="font-size: 14px;">{{player.position}}</p>
+            </div>
+          </div>
+
+          <div style="transform: scale(1.4);">
+            <span class="bg-light-primary text-primary rounded f-w-600 p-6 p-y-4 f-s-12">
+              {{ player.playerNumber }}
+            </span>
+          </div>
+
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <mat-card class="cardWithShadow col-8">
+    <mat-card-content class="d-flex justify-content-center p-5">
+
+      <div class="timeline m-t-12">
+
+        <div class="timeline-item d-flex overflow-hidden" style="margin-top: -16px;">
+          <div class="time text-right mat-subtitle-1 f-s-14">
+            <b>Country</b>
+          </div>
+          <div class="point d-flex align-items-center">
+            <span class="timeline-badge border-success m-y-8"></span>
+            <span class="timline-border d-block"></span>
+          </div>
+          <div class="desc">{{player.country}}</div>
+        </div>
+
+        <div class="timeline-item d-flex overflow-hidden">
+          <div class="time text-right mat-subtitle-1 f-s-14">
+            <b>Age</b>
+          </div>
+          <div class="point d-flex align-items-center">
+            <span class="timeline-badge border-primary m-y-8"></span>
+            <span class="timline-border d-block"></span>
+          </div>
+          <div class="desc">{{player.age}} years</div>
+        </div>
+
+        <div class="timeline-item d-flex overflow-hidden">
+          <div class="time text-right mat-subtitle-1 f-s-14">
+            <b>Email</b>
+          </div>
+          <div class="point d-flex align-items-center">
+            <span class="timeline-badge border-error m-y-8"></span>
+            <span class="timline-border d-block"></span>
+          </div>
+          <div class="desc">{{player.email}}</div>
+        </div>
+
+        <div class="timeline-item d-flex overflow-hidden">
+          <div class="time text-right mat-subtitle-1 f-s-14">
+            <b>Phone</b>
+          </div>
+          <div class="point d-flex align-items-center">
+            <span class="timeline-badge border-warning m-y-8"></span>
+            <span class="timline-border d-block"></span>
+          </div>
+          <div class="desc">{{player.phoneNumber}}</div>
+        </div>
+
+        <div class="timeline-item d-flex overflow-hidden">
+          <div class="time text-right mat-subtitle-1 f-s-14">
+            <b>Height</b>
+          </div>
+          <div class="point d-flex align-items-center">
+            <span class="timeline-badge border-accent m-y-8"></span>
+            <span class="timline-border d-block"></span>
+          </div>
+          <div class="desc"> {{player.height}} cm</div>
+        </div>
+
+        <div class="timeline-item d-flex overflow-hidden">
+          <div class="time text-right mat-subtitle-1 f-s-14">
+            <b>Weight</b>
+          </div>
+          <div class="point d-flex align-items-center">
+            <span class="timeline-badge border-primary m-y-8"></span>
+            <span class="timline-border d-block"></span>
+          </div>
+          <div class="desc">{{player.weight}} Kg</div>
+        </div>
+
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+
+
+<div class="row">
+  <!-- strength and weakness left side image position right side -->
+  <div class="col-7">
+    <mat-card class="cardWithShadow">
+      <mat-card-header style="margin-bottom: 20px;">
+        <mat-card-title>Player Strength and Weakness</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <div class="position-relative d-flex align-items-center justify-content-between">
+          <!-- <th>Strength</th>
+            <th>Weakness</th> -->
+
+          <div class="d-flex flex-column justify-content-between">
+
+            <div>
+              <h2 class="col-8"> Strength</h2>
+              <p class="col-12"> {{playerPerformance.strength}}</p>
+            </div>
+
+            <div>
+              <h2 class="col-8"> Weakness</h2>
+              <p class="col-12"> {{playerPerformance.weakness}}</p>
+            </div>
+
+          </div>
+
+          <img class="position-absolute top-0 end-0" src="../../../assets/images/positions/{{player.position}}.png"
+            alt="Position {{player.position}}" class="img-fluid" style="width:31%;">
+        </div>
+
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- strength and weakness left side image position right side -->
+  <div class="col-5">
+    <mat-card class="cardWithShadow">
+      <mat-card-header style="margin-bottom: 20px;" class="d-flex justify-content-between align-items-center">
+        <mat-card-title>Player Performance</mat-card-title>
+        <div>
+          <button mat-raised-button color="primary" (click)="handleStatistics()">{{btnMessage}}</button>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <canvas id="playerStatsChart"></canvas>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- add  performance -->
+<div *ngIf="player.position == 'GK'">
+
+  <div class="col-10">
+    <mat-card class="cardWithShadow">
+      <mat-card-header style="margin-bottom: 10px;">
+        <mat-card-title>Player Performance</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="table-responsive row">
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+
+                <th>Matched played</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ playerPerformance.matchesPlayed }} Matches </td>
+
+              </tr>
+            </tbody>
+          </table>
+
+
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+
+                <th>Minutes played</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ playerPerformance.minutes }} minutes</td>
+
+              </tr>
+            </tbody>
+          </table>
+
+
+
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+
+                <th>Fouls</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ playerPerformance.fouls }} fouls</td>
+
+              </tr>
+            </tbody>
+          </table>
+
+
+
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+
+                <th>Penalties Committed</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ playerPerformance.penaltiesCommitted }} penalties</td>
+
+              </tr>
+            </tbody>
+          </table>
+
+
+
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+                <th>Yellow Cards</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ playerPerformance.yellowCards }} yellow cards</td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-responsive row" style="margin-top: 20px;">
+          <table class="table table-hover" style="margin-left: 100px;">
+            <thead>
+              <tr>
+                <th>Keep saves</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ playerPerformance.keepSaves }} saves</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+                <th>Penalties saved</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ playerPerformance.peenalitiesSaved }} penalty saved</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
+
+<!-- add  performance -->
+<div *ngIf="player.position == 'CB' || player.position == 'RB' || player.position == 'LB'">
+    <div class="col-10">
+      <mat-card class="cardWithShadow">
+        <mat-card-header style="margin-bottom: 20px;">
+          <mat-card-title>Player Performance</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="table-responsive row">
+            <table class="table table-hover" style="margin-left: 50px;">
+              <thead>
+                <tr>
+
+                  <th>Matched played</th>
+
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ playerPerformance.matchesPlayed }} Matches </td>
+
+                </tr>
+              </tbody>
+            </table>
+
+
+            <table class="table table-hover" style="margin-left: 50px;">
+              <thead>
+                <tr>
+
+                  <th>Minutes played</th>
+
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ playerPerformance.minutes }} minutes</td>
+
+                </tr>
+              </tbody>
+            </table>
+
+
+            <table class="table table-hover" style="margin-left: 50px;">
+              <thead>
+                <tr>
+
+                  <th>Fouls</th>
+
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ playerPerformance.fouls }} fouls</td>
+
+                </tr>
+              </tbody>
+            </table>
+
+
+            <table class="table table-hover" style="margin-left: 50px;">
+              <thead>
+                <tr>
+
+                  <th>Penalties Committed</th>
+
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ playerPerformance.penaltiesCommitted }} penalties</td>
+
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table table-hover" style="margin-left: 50px;">
+              <thead>
+                <tr>
+                  <th>Yellow Cards</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ playerPerformance.yellowCards }} yellow cards</td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-responsive row" style="margin-top: 20px;">
+            <table class="table table-hover" style="margin-left: 100px;">
+              <thead>
+                <tr>
+                  <th>Interceptions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ playerPerformance.interceptions }} interception</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table table-hover" style="margin-left: 50px;">
+              <thead>
+                <tr>
+                  <th>Tackles</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ playerPerformance.tackles }} tackles</td>
+                </tr>
+              </tbody>
+            </table>
+
+
+            <table class="table table-hover" style="margin-left: 50px;">
+              <thead>
+                <tr>
+                  <th>Possession Won</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ playerPerformance.possessionWon }} Possession won</td>
+
+                </tr>
+              </tbody>
+            </table>
+
+
+            <table class="table table-hover" style="margin-left: 50px;">
+              <thead>
+                <tr>
+                  <th>Balls Recover</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ playerPerformance.ballsRecovered }} Ball recovered</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </mat-card-content>
+      </mat-card>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- add  performance -->
+<div *ngIf="player.position == 'CM' || player.position == 'CDM' || player.position == 'CAM' || player.position == 'RM' || player.position == 'LM' || player.position == 'RW' || player.position == 'LW' || player.position == 'ST'">
+  <div class="col-10">
+    <mat-card class="cardWithShadow">
+      <mat-card-header style="margin-bottom: 20px;">
+        <mat-card-title>Player Performance</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="table-responsive row">
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+
+                <th>Matched played</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ playerPerformance.matchesPlayed }} Matches </td>
+
+              </tr>
+            </tbody>
+          </table>
+
+
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+
+                <th>Minutes played</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ playerPerformance.minutes }} minutes</td>
+
+              </tr>
+            </tbody>
+          </table>
+
+
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+
+                <th>Fouls</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ playerPerformance.fouls }} fouls</td>
+
+              </tr>
+            </tbody>
+          </table>
+
+
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+
+                <th>Penalties Committed</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ playerPerformance.penaltiesCommitted }} penalties</td>
+
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+                <th>Yellow Cards</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ playerPerformance.yellowCards }} yellow cards</td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-responsive row" style="margin-top: 20px;">
+          <table class="table table-hover" style="margin-left: 100px;">
+            <thead>
+              <tr>
+                <th>Interceptions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ playerPerformance.interceptions }} interception</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+                <th>Tackles</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ playerPerformance.tackles }} tackles</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+                <th>Possession Won</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ playerPerformance.possessionWon }} Possession won</td>
+
+              </tr>
+            </tbody>
+          </table>
+
+
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+                <th>Balls Recover</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ playerPerformance.ballsRecovered }} Ball recovered</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

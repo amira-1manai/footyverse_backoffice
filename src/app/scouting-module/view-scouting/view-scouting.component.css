@@ -1,0 +1,124 @@
+.container {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 200px;
+  padding: 5px;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 8px;
+  text-align: left;
+}
+
+.btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-update {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-delete {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.pagination-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-item {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.page-item a {
+  padding: 6px 12px;
+  text-decoration: none;
+  color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+}
+
+.page-item a:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.page-item.disabled a {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.page-item.active a {
+  background-color: #007bff;
+  color: #fff;
+}
+/* Blue Button */
+.blue-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Light Blue Button */
+.light-blue-button {
+  background-color: #ADD8E6;
+  color: #000;
+}
+
+/* Orange Button */
+.orange-button {
+  background-color: #FFA500;
+  color: #fff;
+}
+/* Example styles for buttons */
+.mat-flat-button {
+  margin-top: 8px; /* Apply margin top */
+}
+
+.primary-button {
+  background-color: blue; /* Blue color for primary button */
+  color: white; /* White text color */
+}
+
+.secondary-button {
+  background-color: lightblue; /* Light blue color for secondary button */
+  color: black; /* Black text color */
+}
+
+.accent-button {
+  background-color: orange; /* Orange color for accent button */
+  color: white; /* White text color */
+}
+
+/* Add this CSS to your global styles file or component-specific styles */
+.mat-icon {
+  color: inherit; /* Inherit color from parent element */
+}

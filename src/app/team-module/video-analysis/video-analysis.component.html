@@ -1,0 +1,147 @@
+<mat-card class="b-1 shadow-none">
+  <mat-card-header>
+    <mat-card-title> Analyse your team performance here: </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-3">
+    <div class="d-flex flex-column align-items-center justify-content-center upload" style="height: 300px;">
+      <h3 class="m-6">Upload your video to start</h3>
+      <div class="latest-news">
+        <div>
+          <input type="file" #fileInput />
+          <button (click)="uploadVideo()">Upload</button>
+        </div>
+        <video controls style="margin-top: 20px;">
+          <source src="http://localhost:8000/media/08fd33_4.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <div style="color: green; margin-top: 20px;">
+          <p> <b> {{waiting_message}}</b></p>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
+<!-- add  performance -->
+<div class="d-flex justify-content-center">
+  <div class="col-10">
+    <mat-card class="cardWithShadow d-flex justify-content-center">
+      <mat-card-header style="margin-bottom: 20px;">
+        <mat-card-title>Your video Analysis result</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="table-responsive row d-flex justify-content-center">
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+
+                <th>Team 1 average distance</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> {{json_returned.team1_average_distance}} </td>
+
+              </tr>
+            </tbody>
+          </table>
+
+
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+
+                <th>Team 1 average speed</th> 
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{json_returned.team1_average_speed}}</td>
+
+              </tr>
+            </tbody>
+          </table>
+          
+
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+
+                <th>Team 1 possession</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{json_returned.team1_possession}}</td>
+
+              </tr>
+            </tbody>
+          </table>
+
+
+
+        
+        </div>
+
+        <div class="table-responsive row d-flex justify-content-center"  style="margin-top: 15px;">
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+                <th>Team 2 average distance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> {{json_returned.team2_average_distance}} </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+                <th>Team 2 average speed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{json_returned.team2_average_speed}}</td>
+
+              </tr>
+            </tbody>
+          </table>
+
+
+
+          <table class="table table-hover" style="margin-left: 50px;">
+            <thead>
+              <tr>
+                <th>Team 2 possession</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{json_returned.team2_possession}}</td>
+
+              </tr>
+            </tbody>
+          </table>
+
+
+
+        
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

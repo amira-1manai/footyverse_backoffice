@@ -1,0 +1,30 @@
+<div class="col-lg-10">
+  <mat-card class="cardWithShadow">
+    <mat-card-content class="p-24">
+      <div class="d-flex w-100">
+        <mat-card-title>Injuries count by month :</mat-card-title>
+        <div class="m-l-auto">
+          <mat-form-field class="theme-select" appearance="outline">
+            <mat-select value="mar">
+              <mat-option>
+                zihduzh
+              </mat-option>
+
+              <mat-option>
+                zihduzh
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <canvas baseChart 
+      [datasets]="barChartData.datasets" 
+      [labels]="barChartData.labels" 
+      [options]="barChartOptions"
+      [type]="barChartType"
+      (chartHover)="chartHovered($event)">
+      </canvas>
+    </mat-card-content>
+  </mat-card>
+</div>

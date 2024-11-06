@@ -1,0 +1,153 @@
+<div class="d-flex justify-content-between align-items-center m-b-24">
+    <div class="d-flex align-items-center">
+      <button mat-icon-button routerLink="/injury/view-injuries-back">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <h2 class="m-0">Player for scouting details</h2>
+    </div>
+  </div>
+  
+  <div class="row d-flex align-items-center">
+    <div class="row col-4 mt-4">
+      <div style="transform: scale(.9);">
+       
+        <mat-card class="cardWithShadow productcard overflow-hidden">
+          <a >
+            <img src="https://footyverse-backend.onrender.com/images/{{scouting.avatar}}" alt="imgSrc" class="w-100" mat-card-image />
+          </a>
+          <mat-card-content class="p-b-24 p-t-12 position-relative d-flex align-items-center justify-content-between">
+            
+            <div>
+              <mat-card-title class="mat-headline-2 f-s-16 m-b-4">
+                {{ scouting.playername }}
+              </mat-card-title>
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <p class="mat-body-2 f-w-600" style="font-size: 14px;">{{scouting.position}}</p>
+                </div>
+              </div>
+            </div>
+  
+            <div style="transform: scale(1.4);">
+              <span class="bg-light-primary text-primary rounded f-w-600 p-6 p-y-4 f-s-12">
+  
+                {{ scouting.rate }}/10
+              </span>
+            </div>
+  
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  
+    <mat-card class="cardWithShadow col-8">
+      <mat-card-content class="d-flex justify-content-center p-5">
+  
+        <div class="timeline m-t-12">
+  
+          <div class="timeline-item d-flex overflow-hidden" style="margin-top: -16px;">
+            <div class="time text-right mat-subtitle-1 f-s-14">
+              <b>Played</b>
+            </div>
+            <div class="point d-flex align-items-center">
+              <span class="timeline-badge border-success m-y-8"></span>
+              <span class="timline-border d-block"></span>
+            </div>
+            <div class="desc">{{scouting.MatchesPlayed}} matches</div>
+          </div>
+  
+          <div class="timeline-item d-flex overflow-hidden">
+            <div class="time text-right mat-subtitle-1 f-s-14">
+              <b>Yellow cards</b>
+            </div>
+            <div class="point d-flex align-items-center">
+              <span class="timeline-badge border-primary m-y-8"></span>
+              <span class="timline-border d-block"></span>
+            </div>
+            <div class="desc">{{scouting.YellowCards}} card</div>
+          </div>
+  
+          <div class="timeline-item d-flex overflow-hidden">
+            <div class="time text-right mat-subtitle-1 f-s-14">
+              <b>Red cards</b>
+            </div>
+            <div class="point d-flex align-items-center">
+              <span class="timeline-badge border-error m-y-8"></span>
+              <span class="timline-border d-block"></span>
+            </div>
+            <div class="desc">{{scouting.RedCards}} card</div>
+          </div>
+  
+          <div class="timeline-item d-flex overflow-hidden">
+            <div class="time text-right mat-subtitle-1 f-s-14">
+              <b>Goals Scored</b>
+            </div>
+            <div class="point d-flex align-items-center">
+              <span class="timeline-badge border-warning m-y-8"></span>
+              <span class="timline-border d-block"></span>
+            </div>
+            <div class="desc">{{scouting.GoalsScored}} goal</div>
+          </div>
+  
+          <div class="timeline-item d-flex overflow-hidden">
+            <div class="time text-right mat-subtitle-1 f-s-14">
+              <b>Assist</b>
+            </div>
+            <div class="point d-flex align-items-center">
+              <span class="timeline-badge border-accent m-y-8"></span>
+              <span class="timline-border d-block"></span>
+            </div>
+            <div class="desc"> {{scouting.Assists}} assist</div>
+          </div>
+  
+          <div class="timeline-item d-flex overflow-hidden">
+            <div class="time text-right mat-subtitle-1 f-s-14">
+              <b>Potential</b>
+            </div>
+            <div class="point d-flex align-items-center">
+              <span class="timeline-badge border-primary m-y-8"></span>
+              <span class="timline-border d-block"></span>
+            </div>
+            <div class="desc">{{scouting.potential}}</div>
+          </div>
+  
+          <div class="timeline-item d-flex overflow-hidden">
+            <div class="time text-right mat-subtitle-1 f-s-14">
+              <b>Power spots</b>
+            </div>
+            <div class="point d-flex align-items-center">
+              <span class="timeline-badge border-error m-y-8"></span>
+              <span class="timline-border d-block"></span>
+            </div>
+            <div class="desc">{{scouting.power}}</div>
+          </div>
+
+          <div class="timeline-item d-flex overflow-hidden">
+            <div class="time text-right mat-subtitle-1 f-s-14">
+              <b>Weaknesses</b>
+            </div>
+            <div class="point d-flex align-items-center">
+              <span class="timeline-badge border-error m-y-8"></span>
+              <span class="timline-border d-block"></span>
+            </div>
+            <div class="desc">{{scouting.weaknesses}}</div>
+          </div>
+
+
+          <div class="timeline-item d-flex overflow-hidden">
+            <div class="time text-right mat-subtitle-1 f-s-14">
+              <b>Power</b>
+            </div>
+            <div class="point d-flex align-items-center">
+              <span class="timeline-badge border-error m-y-8"></span>
+              <span class="timline-border d-block"></span>
+            </div>
+            <div class="desc">{{scouting.power}}</div>
+          </div>
+  
+        </div>
+      </mat-card-content>
+    </mat-card>
+  
+  </div>
+  

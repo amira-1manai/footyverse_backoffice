@@ -1,0 +1,74 @@
+<div class="container">
+  <h2>Update Scouting</h2>
+  <form [formGroup]="scoutingForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="playername" class="label"><strong></strong></label>
+      <input type="text" class="form-control" id="playername" formControlName="playername"  hidden>
+    </div>
+    <div class="form-group">
+      <label for="playername" class="label"><strong>Player name:</strong></label>
+      <br> 
+      <textarea class="form-control" id="playername" formControlName="playername" required></textarea>
+    </div>
+
+  
+    
+    <div class="form-group">
+      <label for="weaknesses" class="label"><strong>Select Weaknesses:</strong></label>
+      <div class="tg-select">
+        <select class="form-control" formControlName="weaknesses">
+          <option value="">Select Weakness</option>
+          <option value="Physical Weaknesses">Physical Weaknesses</option>
+          <option value="Technical Weaknesses">Technical Weaknesses</option>
+          <option value="Tactical Weaknesses">Tactical Weaknesses</option>
+          <option value="Mental Weaknesses">Mental Weaknesses</option>
+          <option value="Injuries">Injuries</option>
+          <option value="Adaptability">Adaptability</option>
+          <option value="Communication">Communication</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description" class="label"><strong>Description:</strong></label>
+      <br> 
+      <textarea class="form-control" id="description" formControlName="description" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="rate" class="label"><strong>Select Rate:</strong></label>
+      <div class="tg-select">
+        <select class="form-control" id="rate" formControlName="rate" required>
+          <option value="">Select Rate</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="potential" class="label"><strong>Enter potential:</strong></label>
+      <br>
+      <input type="text" class="form-control" id="potential" formControlName="potential" required>
+    </div>
+    <div class="form-group">
+      <label for="power" class="label"><strong>Select Power:</strong></label>
+      <div class="tg-select">
+        <select class="form-control" id="power" formControlName="power" required>
+          <option value="">Select Power</option>
+          <option value="Physical Power">Physical Power</option>
+          <option value="Mental Power">Mental Power</option>
+          <option value="Emotional Power">Emotional Power</option>
+          <option value="Intellectual Power">Intellectual Power</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>

@@ -1,0 +1,114 @@
+<div>
+  <mat-card class="cardWithShadow">
+    <mat-card-content class="p-24">
+
+      <div class="row p-10">
+        <div class="d-flex w-100">
+          <mat-card-title class="ms-2">Manage users</mat-card-title>
+          <div class="m-l-auto" style="margin-top: -4px;">
+          </div>
+          <div class="m-l-auto">
+            <button mat-raised-button color="primary" routerLink="/user/add-user">Add User</button>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="table-responsive m-t-16">
+        <table mat-table [dataSource]="dataSource" class="w-100">
+          <!-- First Name Column -->
+          <ng-container matColumnDef="First Name">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 mat-subtitle-1 f-s-14">
+              First Name
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <div class="d-flex align-items-center">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYmT14VclrxU8rgXe3UxixDUFIsdQP4Jm940_1KeE5mA&s"
+                  alt="users" width="50" class="rounded-circle" />
+                <div class="m-l-16">
+                  <h6 class="mat-subtitle-1 f-s-14 f-w-600">
+                    {{ element.firstName}}
+                  </h6>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+
+          <!-- Last Name Column -->
+          <ng-container matColumnDef="Last Name">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 mat-subtitle-1 f-s-14">
+              Last Name
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <h6 class="mat-subtitle-1 f-s-14 f-w-600">
+                {{ element.lastName}}
+              </h6>
+            </td>
+          </ng-container>
+
+          <!-- Email Column -->
+          <ng-container matColumnDef="Email">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 mat-subtitle-1 f-s-14">
+              Email
+            </th>
+            <td mat-cell *matCellDef="let element" class="mat-body-1">
+              {{ element.email}}
+            </td>
+          </ng-container>
+
+          <!-- Role Column -->
+          <ng-container matColumnDef="Role">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 mat-subtitle-1 f-s-14">
+              Role
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <ng-template [ngIf]="element.Role === 'MedicalStaff'">
+                <span class="bg-light-accent text-accent rounded f-w-600 p-6 p-y-4 f-s-12">
+                  MedicalStaff
+                </span>
+              </ng-template>
+              <ng-template [ngIf]="element.Role === 'Player'">
+                <span class="bg-light-warning text-warning rounded f-w-600 p-6 p-y-4 f-s-12">
+                  Player
+                </span>
+              </ng-template>
+              <ng-template [ngIf]="element.Role == 'Trainer'">
+                <span class="bg-light-error text-error rounded f-w-600 p-6 p-y-4 f-s-12">
+                  Trainer
+                </span>
+              </ng-template>
+
+              <ng-template [ngIf]="element.Role == 'TechnicalDirector'">
+                <span class="bg-light-success text-success rounded f-w-600 p-6 p-y-4 f-s-12">
+                  TechnicalDirector
+                </span>
+              </ng-template>
+            </td>
+          </ng-container>
+
+          <!-- Action Column -->
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef class="f-w-600 mat-subtitle-1 f-s-14">
+              Actions
+            </th>
+            <td mat-cell *matCellDef="let element" class="mat-body-1">
+              <button mat-icon-button color="primary"  routerLink="/user/edit-user/{{element._id}}">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="deleteUser(element._id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

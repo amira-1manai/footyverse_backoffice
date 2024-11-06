@@ -1,0 +1,190 @@
+#tg-main .tg-main-section .container .tg-section-name h2 {
+    color: blue; /* Example color change */
+  }
+  
+  #tg-main .tg-main-section .container .form-group label {
+    font-weight: bold; /* Example font-weight change */
+  }
+  
+  #tg-main .tg-main-section .container .form-group input[type="text"],
+  #tg-main .tg-main-section .container .form-group select {
+    border: 1px solid red; /* Example border change */
+  }
+  
+  #tg-main .tg-main-section .container .form-group .btn {
+    background-color: green; /* Example background color change */
+    color: white;
+  }
+  .container {
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    width: 200px;
+    padding: 5px;
+  }
+  
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-update {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .btn-delete {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .pagination-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .pagination {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .page-item {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .page-item a {
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+  }
+  
+  .page-item a:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .page-item.disabled a {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  .page-item.active a {
+    background-color: #007bff;
+    color: #fff;
+  }
+  /* Blue Button */
+  .blue-button {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Light Blue Button */
+  .light-blue-button {
+    background-color: #ADD8E6;
+    color: #000;
+  }
+  
+  /* Orange Button */
+  .orange-button {
+    background-color: #FFA500;
+    color: #fff;
+  }
+  /* Example styles for buttons */
+  .mat-flat-button {
+    margin-top: 8px; /* Apply margin top */
+  }
+  
+  .primary-button {
+    background-color: blue; /* Blue color for primary button */
+    color: white; /* White text color */
+  }
+  
+  .secondary-button {
+    background-color: lightblue; /* Light blue color for secondary button */
+    color: black; /* Black text color */
+  }
+  
+  .accent-button {
+    background-color: orange; /* Orange color for accent button */
+    color: white; /* White text color */
+  }
+  
+  /* Add this CSS to your global styles file or component-specific styles */
+  .mat-icon {
+    color: inherit; /* Inherit color from parent element */
+  }
+  /* Custom Styles for Input and Button */
+  .form-input,
+  .form-select,
+  .form-textarea {
+      padding: 0.75rem; /* Adjust padding as needed */
+      border-radius: 0.5rem; /* Rounded corners */
+      border: 1px solid #d1d5db; /* Border color */
+      font-size: 1rem; /* Adjust font size */
+      margin-bottom: 1rem; /* Add space between inputs */
+  }
+  
+  .btn {
+      padding: 0.75rem 1.5rem; /* Adjust padding for button */
+      border-radius: 0.5rem; /* Rounded corners */
+      font-size: 1rem; /* Adjust font size */
+      cursor: pointer; /* Show pointer on hover */
+  }
+  
+  .btn-primary {
+      background-color: #3b82f6; /* Primary button color */
+      color: #fff; /* Text color */
+      border: 1px solid transparent; /* Transparent border */
+  }
+  
+  .btn-primary:hover {
+      background-color: #2563eb; /* Darker color on hover */
+  }
+  /* Custom CSS for rounded and bigger inputs */
+.form-control {
+    border-radius: 10px; /* Rounded corners */
+    padding: 12px; /* Increased padding */
+    font-size: 16px; /* Increased font size */
+}
+
+/* Custom CSS for positioning the button below the form */
+.form-group:last-child {
+    margin-top: 20px; /* Add space between the last form group and the button */
+}
+.label {
+    margin-bottom: 8px; /* Add space between label and input */
+  }
+  
+  .form-group {
+    margin-bottom: 20px; /* Add space between form groups */
+  }
+  
+
+  
+  

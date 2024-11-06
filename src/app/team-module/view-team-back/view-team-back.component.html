@@ -1,0 +1,204 @@
+<div class="d-flex justify-content-between align-items-center m-b-24">
+  <h2 class="m-0">Our team players</h2>
+  <div class="d-flex align-items-center" routerLink="/team/add-player">
+    <button mat-icon-button routerLink="/team/add-player">
+      <mat-icon>add</mat-icon>
+    </button>
+    <h3 class="m-0">Add a Player</h3>
+  </div>
+</div>
+
+<mat-card class="b-1 shadow-none">
+  <mat-card-header>
+    <mat-card-title> Goalkeepers </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-3">
+
+    <div *ngIf="goalkeepers.length === 0" class="d-flex justify-content-center align-items-center"
+      style="height: 10px;">
+      <h3 class="m-0">No Goalkeepers</h3>
+    </div>
+
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-sm-6 col-lg-3" *ngFor="let player of goalkeepers">
+        <mat-card class="cardWithShadow productcard overflow-hidden">
+          <a routerLink="/team/player-details/{{player._id}}">
+            <img src="https://footyverse-backend.onrender.com/images/{{player.avatar}}" alt="imgSrc" class="w-100" mat-card-image />
+          </a>
+          <mat-card-content class="p-b-24 p-t-12 position-relative d-flex align-items-center justify-content-between">
+            <button mat-mini-fab color="primary" class="icon-30 cart-btn" matTooltip="Delete player"
+              (click)="deletePlayer(player._id)">
+              <i-tabler name="trash" class="icon-16"></i-tabler>
+            </button>
+            <div>
+              <mat-card-title class="mat-headline-2 f-s-16 m-b-4">
+                {{ player.firstName}} {{ player.firstName}}
+              </mat-card-title>
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <p class="mat-body-2 f-w-600" style="font-size: 14px;">Goalkeeper</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="transform: scale(1.4);">
+              <span class="bg-light-primary text-primary rounded f-w-600 p-6 p-y-4 f-s-12">
+
+                {{ player.playerNumber }}
+              </span>
+            </div>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+
+
+
+
+<mat-card class="b-1 shadow-none">
+  <mat-card-header>
+    <mat-card-title> Deefenders </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-3">
+
+    <div *ngIf="defenders.length === 0" class="d-flex justify-content-center align-items-center" style="height: 10px;">
+      <h3 class="m-0">No Defenders</h3>
+    </div>
+
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-sm-6 col-lg-3" *ngFor="let player of defenders">
+        <mat-card class="cardWithShadow productcard overflow-hidden">
+          <a routerLink="/team/player-details/{{player._id}}">
+            <img src="https://footyverse-backend.onrender.com/images/{{player.avatar}}" alt="imgSrc" class="w-100" mat-card-image />
+          </a>
+          <mat-card-content class="p-b-24 p-t-12 position-relative d-flex align-items-center justify-content-between">
+            <button mat-mini-fab color="primary" class="icon-30 cart-btn" matTooltip="Delete player"
+              (click)="deletePlayer(player._id)">
+              <i-tabler name="trash" class="icon-16"></i-tabler>
+            </button>
+            <div>
+              <mat-card-title class="mat-headline-2 f-s-16 m-b-4">
+                {{ player.firstName}} {{ player.firstName}}
+              </mat-card-title>
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <p class="mat-body-2 f-w-600" style="font-size: 14px;">Defender</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="transform: scale(1.4);">
+              <span class="bg-light-accent text-accent rounded f-w-600 p-6 p-y-4 f-s-12">
+                {{ player.playerNumber }}
+              </span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+
+
+
+
+<mat-card class="b-1 shadow-none">
+  <mat-card-header>
+    <mat-card-title> Midfielders </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-3">
+
+    <div *ngIf="midfielders.length === 0" class="d-flex justify-content-center align-items-center"
+      style="height: 10px;">
+      <h3 class="m-0">No Midfielders</h3>
+    </div>
+
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-sm-6 col-lg-3" *ngFor="let player of midfielders">
+        <mat-card class="cardWithShadow productcard overflow-hidden">
+          <a routerLink="/team/player-details/{{player._id}}">
+            <img src="https://footyverse-backend.onrender.com/images/{{player.avatar}}" alt="imgSrc" class="w-100" mat-card-image />
+          </a>
+          <mat-card-content class="p-b-24 p-t-12 position-relative d-flex align-items-center justify-content-between">
+            <button mat-mini-fab color="primary" class="icon-30 cart-btn" matTooltip="Delete player"
+              (click)="deletePlayer(player._id)">
+              <i-tabler name="trash" class="icon-16"></i-tabler>
+            </button>
+            <div>
+              <mat-card-title class="mat-headline-2 f-s-16 m-b-4">
+                {{ player.firstName}} {{ player.firstName}}
+              </mat-card-title>
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <p class="mat-body-2 f-w-600" style="font-size: 14px;">Midfielder</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="transform: scale(1.4);">
+              <span class="bg-light-warning text-warning rounded f-w-600 p-6 p-y-4 f-s-12">
+                {{ player.playerNumber }}
+              </span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+
+
+
+<mat-card class="b-1 shadow-none">
+  <mat-card-header>
+    <mat-card-title> Forwards </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-3">
+
+    <div *ngIf="forwards.length === 0" class="d-flex justify-content-center align-items-center" style="height: 10px;">
+      <h3 class="m-0">No Forwards</h3>
+    </div>
+
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-sm-6 col-lg-3" *ngFor="let player of forwards">
+        <mat-card class="cardWithShadow productcard overflow-hidden">
+          <a routerLink="/team/player-details/{{player._id}}">
+            <img src="https://footyverse-backend.onrender.com/images/{{player.avatar}}" alt="imgSrc" class="w-100" mat-card-image />
+          </a>
+          <mat-card-content class="p-b-24 p-t-12 position-relative d-flex align-items-center justify-content-between">
+            <button mat-mini-fab color="primary" class="icon-30 cart-btn" matTooltip="Delete player"
+              (click)="deletePlayer(player._id)">
+              <i-tabler name="trash" class="icon-16"></i-tabler>
+            </button>
+            <div>
+              <mat-card-title class="mat-headline-2 f-s-16 m-b-4">
+                {{ player.firstName}} {{ player.firstName}}
+              </mat-card-title>
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <p class="mat-body-2 f-w-600" style="font-size: 14px;">Forward</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="transform: scale(1.4);">
+              <span class="bg-light-error text-error rounded f-w-600 p-6 p-y-4 f-s-12">
+                {{ player.playerNumber }}
+              </span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>

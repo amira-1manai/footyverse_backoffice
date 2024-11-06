@@ -1,0 +1,39 @@
+<mat-card class="b-1 shadow-none">
+    <mat-card-header>
+      <mat-card-title> Players to join the training </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="b-t-3">
+  
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-6 col-lg-3" *ngFor="let player of training.player">
+          <mat-card class="cardWithShadow productcard overflow-hidden">
+            <a routerLink="/team/player-details/{{player._id}}">
+              <img src="https://footyverse-backend.onrender.com/images/{{player.avatar}}" alt="imgSrc" class="w-100" mat-card-image />
+            </a>
+            <mat-card-content class="p-b-24 p-t-12 position-relative d-flex align-items-center justify-content-between">
+              
+              <div>
+                <mat-card-title class="mat-headline-2 f-s-16 m-b-4">
+                  {{ player.firstName}} {{ player.firstName}}
+                </mat-card-title>
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center">
+                    <p class="mat-body-2 f-w-600" style="font-size: 14px;">Goalkeeper</p>
+                  </div>
+                </div>
+              </div>
+  
+              <div style="transform: scale(1.4);">
+                <span class="bg-light-primary text-primary rounded f-w-600 p-6 p-y-4 f-s-12">
+  
+                  {{ player.playerNumber }}
+                </span>
+              </div>
+  
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+  
+    </mat-card-content>
+  </mat-card>

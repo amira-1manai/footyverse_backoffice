@@ -1,0 +1,110 @@
+
+<h3 style="color: darkgreen;">
+  Dashboard :
+</h3>
+
+
+
+<div class="row">
+  <div class="col-lg-3 col-sm-6">
+    <mat-card class="cardWithShadow">
+      <mat-card-content class="p-24">
+        <mat-card-title>Number of Users</mat-card-title>
+        <div class="row m-t-24">
+          <div class="col-12" *ngIf="users.length == 0">
+            <h4 class="mat-headline-5"> No Users</h4>
+          </div>
+          <div class="col-12" *ngIf="users.length != 0">
+            <h6 class="mat-headline-5"> {{users.length}} user</h6>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-lg-3 col-sm-6">
+    <mat-card class="cardWithShadow">
+      <mat-card-content class="p-24">
+        <mat-card-title>Number of players</mat-card-title>
+        <div class="row m-t-24">
+          <div class="col-12" *ngIf="nbrPayers == 0">
+            <h4 class="mat-headline-5"> No Players</h4>
+          </div>
+          <div class="col-12" *ngIf="nbrPayers != 0">
+            <h4 class="mat-headline-5"> {{nbrPayers}} player</h4>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-lg-3 col-sm-6">
+    <mat-card class="cardWithShadow">
+      <mat-card-content class="p-24">
+        <mat-card-title>Number of Trainers</mat-card-title>
+        <div class="row m-t-24">
+          <div class="col-12" *ngIf="nbrTrainer == 0">
+            <h4 class="mat-headline-5"> No Trainers</h4>
+          </div>
+          <div class="col-12" *ngIf="nbrTrainer != 0">
+            <h4 class="mat-headline-5"> {{nbrTrainer}} trainer</h4>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-lg-3 col-sm-6">
+    <mat-card class="cardWithShadow">
+      <mat-card-content class="p-24">
+        <mat-card-title>Number of Medical staff</mat-card-title>
+        <div class="row m-t-24">
+          <div class="col-12">
+            <h4 class="mat-headline-5"> 1 Medical staff</h4>
+          </div>
+          
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<!--------------------------------------------------------------------- -->
+<div class="row" >
+  <div class="col-lg-6">
+    <mat-card class="cardWithShadow">
+      <mat-card-content class="p-24">
+        <div class="d-flex w-100">
+          <mat-card-title>Injuries count by month :</mat-card-title>
+          
+        </div>
+
+        <div *ngIf="injuries.length == 0">
+          <h4 class="mat-headline-5"> No data available</h4>
+        </div>
+      
+
+        <canvas style="margin-top: 20px;" baseChart [datasets]="barChartData.datasets" [labels]="barChartData.labels" [options]="barChartOptions"
+          [type]="barChartType" (chartHover)="chartHovered($event)">
+        </canvas>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-lg-6" >
+    <mat-card class="cardWithShadow">
+      <mat-card-content class="p-24">
+        <div class="d-flex w-100">
+          <mat-card-title>Training sessions by month</mat-card-title>
+          </div>
+
+          <div *ngIf="trainings.length == 0">
+            <h4 class="mat-headline-5"> No data available</h4>
+          </div>
+
+        <canvas style="margin-top: 20px;" baseChart [datasets]="barChartData2.datasets" [labels]="barChartData2.labels" [options]="barChartOptions"
+          [type]="barChartType2" (chartHover)="chartHovered($event)">
+        </canvas>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+

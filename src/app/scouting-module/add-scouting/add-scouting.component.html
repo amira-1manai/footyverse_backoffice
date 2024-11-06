@@ -1,0 +1,214 @@
+<div class="blank-layout-container justify-content-center align-items-center">
+  <div class="position-relative row w-100 h-100 bg-gredient justify-content-center">
+    <div class="col-lg-12 d-flex align-items-center"
+      style=" box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); background: #f9fbfe;">
+
+      <mat-card class="cardWithShadow boxed-auth" style="margin-top: 18px;">
+        <mat-card-content class="p-32">
+          <div class="or-border m-t-2">Add a player here</div>
+
+          <form class="m-t-30" [formGroup]="scoutingForm" (ngSubmit)="onSubmit()">
+
+            <!-- angular material user upload avatar -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Player's photo</mat-label>
+
+            <div class="d-flex align-items-center justify-content-center">
+              <div class="d-flex align-items-center">
+                <div class="avatar-upload">
+                  <div class="avatar-edit">
+                    <form>
+                      <input type='file' (change)="onFileSelected($event)" id="imageUpload"
+                        accept=".png, .jpg, .jpeg" />
+                    </form>
+                    <label for="imageUpload"></label>
+                  </div>
+                  <div class="avatar-preview">
+                    <img id="imagePreview" *ngIf="preview" [src]="preview" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- player name -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block m-t-12">Player Name</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input matInput formControlName="playername" />
+            </mat-form-field>
+
+            <!-- position -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Position</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label>Position</mat-label>
+              <mat-select formControlName="position">
+                <mat-option value="GK">GK</mat-option>
+                <mat-option value="CB">CB</mat-option>
+                <mat-option value="RB">RB</mat-option>
+                <mat-option value="LB">LB</mat-option>
+                <mat-option value="CDM">CDM</mat-option>
+                <mat-option value="CM">CM</mat-option>
+                <mat-option value="CAM">CAM</mat-option>
+                <mat-option value="RM">RM</mat-option>
+                <mat-option value="LM">LM</mat-option>
+                <mat-option value="RW">RW</mat-option>
+                <mat-option value="LW">LW</mat-option>
+                <mat-option value="ST">ST</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <!-- age -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Age</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input type="number" matInput formControlName="age" />
+            </mat-form-field>
+
+
+            <!-- weaknesses -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Weaknesses</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label>Select Weaknesses</mat-label>
+              <mat-select formControlName="weaknesses">
+                <mat-option value="Physical Weaknesses">Physical Weaknesses</mat-option>
+                <mat-option value="Technical Weaknesses">Technical Weaknesses</mat-option>
+                <mat-option value="Tactical Weaknesses">Tactical Weaknesses</mat-option>
+                <mat-option value="Mental Weaknesses">Mental Weaknesses</mat-option>
+                <mat-option value="Injuries">Injuries</mat-option>
+                <mat-option value="Adaptability">Adaptability</mat-option>
+                <mat-option value="Adaptability">Adaptability</mat-option>
+                <mat-option value="Communication">Communication</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <!-- descreption-->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">description</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <textarea matInput formControlName="description"></textarea>
+            </mat-form-field>
+
+            <!-- rate select 1-10 -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Rate</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label>Rate</mat-label>
+              <mat-select formControlName="rate">
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+                <mat-option value="3">3</mat-option>
+                <mat-option value="4">4</mat-option>
+                <mat-option value="5">5</mat-option>
+                <mat-option value="6">6</mat-option>
+                <mat-option value="7">7</mat-option>
+                <mat-option value="8">8</mat-option>
+                <mat-option value="9">9</mat-option>
+                <mat-option value="10">10</mat-option>
+              </mat-select>
+
+            </mat-form-field>
+
+            <!-- power -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Power</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label>Power</mat-label>
+              <mat-select formControlName="power">
+                <mat-option value="">Select Power</mat-option>
+                <mat-option value="Physical Power">Physical Power</mat-option>
+                <mat-option value="Mental Power">Mental Power</mat-option>
+                <mat-option value="Emotional Power">Emotional Power</mat-option>
+                <mat-option value="Intellectual Power">Intellectual Power</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+
+
+            <!-- potential -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Potential</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label>Potential</mat-label>
+              <mat-select formControlName="potential">
+                <mat-option value="high Potential">high Potential</mat-option>
+                <mat-option value="Medium Potential">Medium Potential</mat-option>
+                <mat-option value="low Potential">low Potential</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <!-- MatchesPlayed -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Matches Played</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input type="number" matInput formControlName="MatchesPlayed" />
+            </mat-form-field>
+
+            <!-- GoalsScored -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Goals Scored</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input type="number" matInput formControlName="GoalsScored" />
+            </mat-form-field>
+
+            <!-- Assists -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600
+            m-b-12 d-block">Assists</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input type="number" matInput formControlName="Assists" />
+            </mat-form-field>
+
+            <!-- YellowCards -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Yellow Cards</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input type="number" matInput formControlName="YellowCards" />
+            </mat-form-field>
+
+            <!-- RedCards -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Red Cards</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input type="number" matInput formControlName="RedCards" />
+            </mat-form-field>
+
+
+
+            <!-- ShotsonTarget -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Shots on Target</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input type="number" matInput formControlName="ShotsonTarget" />
+            </mat-form-field>
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <button mat-raised-button color="primary" class="w-100 m-t-24" type="submit">Save</button>
+          </form>
+
+
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

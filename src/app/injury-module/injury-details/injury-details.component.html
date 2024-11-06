@@ -1,0 +1,128 @@
+<div class="d-flex justify-content-between align-items-center m-b-24">
+  <div class="d-flex align-items-center">
+    <button mat-icon-button routerLink="/injury/view-injuries-back">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h2 class="m-0">Injury Details</h2>
+  </div>
+</div>
+
+<div class="row d-flex align-items-center">
+  <div class="row col-4 mt-4">
+    <div style="transform: scale(.9);">
+     
+      <mat-card class="cardWithShadow productcard overflow-hidden">
+        <a routerLink="/team/player-details/{{injuredPlayer._id}}">
+          <img src="https://footyverse-backend.onrender.com/images/{{injuredPlayer.avatar}}" alt="imgSrc" class="w-100" mat-card-image />
+        </a>
+        <mat-card-content class="p-b-24 p-t-12 position-relative d-flex align-items-center justify-content-between">
+          
+          <div>
+            <mat-card-title class="mat-headline-2 f-s-16 m-b-4">
+              {{ injuredPlayer.firstName}} {{ injuredPlayer.firstName}}
+            </mat-card-title>
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center">
+                <p class="mat-body-2 f-w-600" style="font-size: 14px;">Goalkeeper</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="transform: scale(1.4);">
+            <span class="bg-light-primary text-primary rounded f-w-600 p-6 p-y-4 f-s-12">
+              {{ injuredPlayer.playerNumber }}
+            </span>
+          </div>
+
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <mat-card class="cardWithShadow col-8">
+    <mat-card-content class="d-flex justify-content-center p-5">
+
+      <div class="timeline m-t-12">
+
+        <div class="timeline-item d-flex overflow-hidden" style="margin-top: -16px;">
+          <div class="time text-right mat-subtitle-1 f-s-14">
+            <b>Injury type</b>
+          </div>
+          <div class="point d-flex align-items-center">
+            <span class="timeline-badge border-success m-y-8"></span>
+            <span class="timline-border d-block"></span>
+          </div>
+          <div class="desc">{{injury.injuryType}}</div>
+        </div>
+
+        <div class="timeline-item d-flex overflow-hidden">
+          <div class="time text-right mat-subtitle-1 f-s-14">
+            <b>Injury date</b>
+          </div>
+          <div class="point d-flex align-items-center">
+            <span class="timeline-badge border-primary m-y-8"></span>
+            <span class="timline-border d-block"></span>
+          </div>
+          <div class="desc">{{injury.date | date: 'fullDate'}}</div>
+        </div>
+
+        <div class="timeline-item d-flex overflow-hidden">
+          <div class="time text-right mat-subtitle-1 f-s-14">
+            <b>Diagnosis</b>
+          </div>
+          <div class="point d-flex align-items-center">
+            <span class="timeline-badge border-error m-y-8"></span>
+            <span class="timline-border d-block"></span>
+          </div>
+          <div class="desc">{{injury.diagnosis}}</div>
+        </div>
+
+        <div class="timeline-item d-flex overflow-hidden">
+          <div class="time text-right mat-subtitle-1 f-s-14">
+            <b>Doctor</b>
+          </div>
+          <div class="point d-flex align-items-center">
+            <span class="timeline-badge border-warning m-y-8"></span>
+            <span class="timline-border d-block"></span>
+          </div>
+          <div class="desc">{{injury.doctor}}</div>
+        </div>
+
+        <div class="timeline-item d-flex overflow-hidden">
+          <div class="time text-right mat-subtitle-1 f-s-14">
+            <b>Estimated</b>
+          </div>
+          <div class="point d-flex align-items-center">
+            <span class="timeline-badge border-accent m-y-8"></span>
+            <span class="timline-border d-block"></span>
+          </div>
+          <div class="desc"> Recovery after {{injury.time}} days</div>
+        </div>
+
+        <div class="timeline-item d-flex overflow-hidden">
+          <div class="time text-right mat-subtitle-1 f-s-14">
+            <b>Treatment</b>
+          </div>
+          <div class="point d-flex align-items-center">
+            <span class="timeline-badge border-primary m-y-8"></span>
+            <span class="timline-border d-block"></span>
+          </div>
+          <div class="desc">{{injury.treatment}}</div>
+        </div>
+
+        <div class="timeline-item d-flex overflow-hidden">
+          <div class="time text-right mat-subtitle-1 f-s-14">
+            <b>Return</b>
+          </div>
+          <div class="point d-flex align-items-center">
+            <span class="timeline-badge border-error m-y-8"></span>
+            <span class="timline-border d-block"></span>
+          </div>
+          <div class="desc">{{injury.returnDate | date: 'fullDate'}}</div>
+        </div>
+
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+</div>
